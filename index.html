@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <p class="description">Creates passwords in the 'adjectivenoun123' format.</p>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="numPasswords">How many? (1-100)</label>
+                <!-- Sets browser-level limits for the input -->
+                <input type="number" id="numPasswords" value="10" min="1" max="100">
+            </div>
+            <div class="control-group">
+                <label for="minLength">Min Length (5-30)</label>
+                <input type="number" id="minLength" value="10" min="5" max="30">
+            </div>
+            <div class="control-group">
+                <label for="maxLength">Max Length (5-30)</label>
+                <input type="number" id="maxLength" value="16" min="5" max="30">
+            </div>
+        </div>
+
+        <button id="generateBtn">Generate</button>
+
+        <!-- A dedicated spot for error messages -->
+        <p id="error-message" class="error-message"></p>
+
+        <div class="results-area">
+            <h2>Results</h2>
+            <pre id="resultsOutput"></pre>
+        </div>
+    </div>
+
+    <!-- Load the word lists and the main script -->
+    <script src="adjectives.js"></script>
+    <script src="nouns.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
