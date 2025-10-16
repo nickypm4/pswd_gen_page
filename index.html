@@ -15,15 +15,15 @@
             <div class="control-group">
                 <label for="numPasswords">How many? (1-100)</label>
                 <!-- Sets browser-level limits for the input -->
-                <input type="number" id="numPasswords" value="10" min="1" max="100">
+                <input type="number" id="numPasswords" value="1" min="1" max="100">
             </div>
             <div class="control-group">
-                <label for="minLength">Min Length (5-30)</label>
-                <input type="number" id="minLength" value="10" min="5" max="30">
+                <label for="minLength">Min Length (9-30)</label>
+                <input type="number" id="minLength" value="10" min="9" max="30">
             </div>
             <div class="control-group">
-                <label for="maxLength">Max Length (5-30)</label>
-                <input type="number" id="maxLength" value="16" min="5" max="30">
+                <label for="maxLength">Max Length (9-30)</label>
+                <input type="number" id="maxLength" value="16" min="9" max="30">
             </div>
         </div>
 
@@ -35,6 +35,7 @@
         <div class="results-area">
             <h2>Results</h2>
             <pre id="resultsOutput"></pre>
+            <p class="security-tip">tip: capitalize some letters or add special characters to be extra secure!</p>
         </div>
     </div>
 
