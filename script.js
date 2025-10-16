@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleGenerateClick() {
-        // 1. Clear old state
+        // clear old state
         errorMessage.textContent = '';
         resultsOutput.textContent = '';
 
-        // 2. Validate inputs
+        // validate inputs
         let numToGenerate = parseInt(numPasswordsInput.value, 10);
         let minLength = parseInt(minLengthInput.value, 10);
         let maxLength = parseInt(maxLengthInput.value, 10);
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 3. Clamp values to safe limits
+        // clamp values to safe limits
         numToGenerate = Math.max(MIN_PASSWORDS_ALLOWED, Math.min(numToGenerate, MAX_PASSWORDS_ALLOWED));
         minLength = Math.max(MIN_LENGTH_ALLOWED, Math.min(minLength, MAX_LENGTH_ALLOWED));
         maxLength = Math.max(MIN_LENGTH_ALLOWED, Math.min(maxLength, MAX_LENGTH_ALLOWED));
@@ -43,10 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
         minLengthInput.value = minLength;
         maxLengthInput.value = maxLength;
 
-        // 4. Reliable generation loop
+        // reliable generation loop
         const foundPasswords = [];
         let attempts = 0;
-        // INCREASED PATIENCE: The safety break is now much higher.
         const maxAttempts = 250000; 
 
         while (foundPasswords.length < numToGenerate && attempts < maxAttempts) {
@@ -57,16 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
             attempts++;
         }
 
-        // Final reporting: Either show results OR an error inside the results box.
+        // either show results or an error inside the results box
         if (foundPasswords.length < numToGenerate) {
-            // FAILURE CASE: Put the error text directly into the results box.
+            // failure: put the error text into the results box
             resultsOutput.textContent = "Failed to find enough passwords...\n\nPlease try wider length constraints\nor a smaller amount.";
-            // Add a CSS class to make the text look like an error.
             resultsOutput.classList.add('error-text');
         } else {
-            // SUCCESS CASE: Put the passwords in the results box.
+            // success: put the passwords in the results box
             resultsOutput.textContent = foundPasswords.join('\n');
-            // IMPORTANT: Remove the error class in case the previous run failed.
+            // remove error class in case the previous run failed
             resultsOutput.classList.remove('error-text');
         }
     }

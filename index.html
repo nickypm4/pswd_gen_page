@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="happykey" />
+    <link rel="manifest" href="/images/site.webmanifest" />
 </head>
 <body>
     <div class="container">
-        <h1>Password Generator</h1>
-        <p class="description">Creates passwords in the 'adjectivenoun123' format.</p>
+        <h1>happykey123</h1>
+        <p class="description">Creates netgear-like passwords in the 'adjectivenoun123' format.</p>
         
         <div class="controls">
             <div class="control-group">
                 <label for="numPasswords">How many? (1-100)</label>
-                <!-- Sets browser-level limits for the input -->
+                <!-- sets browser-level limits for the input -->
                 <input type="number" id="numPasswords" value="1" min="1" max="100">
             </div>
             <div class="control-group">
@@ -29,7 +36,7 @@
 
         <button id="generateBtn">Generate</button>
 
-        <!-- A dedicated spot for error messages -->
+        <!-- error messages -->
         <p id="error-message" class="error-message"></p>
 
         <div class="results-area">
@@ -39,7 +46,20 @@
         </div>
     </div>
 
-    <!-- Load the word lists and the main script -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://nickysite.net" target="_blank" rel="noopener noreferrer">A NickySite Project</a>
+                <span class="separator">|</span>
+                <!-- link to github repo -->
+                <a href="https://github.com/nickypm4/pswd_gen_page/" target="_blank" rel="noopener noreferrer">View Source Code</a>
+            </div>
+            <p class="footer-disclaimer">
+                This website is an independent tool and is not affiliated with, endorsed by, or sponsored by NETGEAR, Inc. The term "Netgear" is used for descriptive purposes only.
+            </p>
+        </div>
+    </footer>
+
     <script src="adjectives.js"></script>
     <script src="nouns.js"></script>
     <script src="script.js"></script>
